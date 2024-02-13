@@ -27,3 +27,6 @@ firebase login
 ## init proj (for firestore and hosting)
 firebase init
 - and select "firestore"
+
+## run with
+npm run dev
