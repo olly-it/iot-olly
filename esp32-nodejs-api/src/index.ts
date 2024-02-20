@@ -48,6 +48,10 @@ const firebaseService:FirebaseService = new FirebaseService();
 app.get('/', (req: Request, res: Response) => {
     firebaseService.getMorse().then((x) => {
         console.log('morse:', JSON.stringify(x));
-        res.send({"morse":x});
-      });
+        if (x!=null && x.data!=null && x.data.value!=null) {
+            res.send(x.data.value);
+        } else {
+            res.send("");
+        }
+    });
 });
