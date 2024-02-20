@@ -9,11 +9,7 @@ npm init
 
 npm i express dotenv cors helmet
 
-npm i -D typescript
-
 npm i -D @types/node @types/express @types/dotenv @types/cors @types/helmet
-
-npx tsc --init
 
 crteate ".env" file with
 PORT=4000
@@ -29,4 +25,4 @@ firebase init
 - and select "firestore"
 
 ## run with
-npm run dev
+npm start

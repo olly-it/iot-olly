@@ -6,15 +6,11 @@ import { initializeApp } from "firebase/app";
 import {
     getFirestore,
     query,
-    addDoc,
     collection,
-    getDocs,
-    doc,
-    deleteDoc,
-    where,
+    getDocs
   } from 'firebase/firestore';
 
-import { firebaseConfig } from "./firebase.config";
+import { firebaseConfig } from "./firebase.config.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -23,13 +19,12 @@ const db = getFirestore(app);
 export class FirebaseService {
     constructor() {}
 
-    async getMorse() : Promise<{id:string, data:any}|null> {
+    async getMorse() {
         console.log('getMorse function invoked');
-        //const q = query(collection(db, "postbox"), where("name", "==", name), where("birthDate", "==", birthDate));
         const q = query(collection(db, "morse"));
-        let querySnapshot = await getDocs(q);
+        let all = await getDocs(q);
         try {
-            return querySnapshot.docs.map( x => { return {id:x.id,data:x.data()} })[0];
+            return all.docs.map( x => { return {id:x.id,data:x.data()} })[0];
         } catch (e) {
           return null;
         }
