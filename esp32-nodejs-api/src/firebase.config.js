@@ -1,9 +1,9 @@
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-    apiKey: "",
-    authDomain: "esp32-app-f7902.firebaseapp.com",
-    projectId: "esp32-app-f7902",
-    storageBucket: "esp32-app-f7902.appspot.com",
-    messagingSenderId: "",
-    appId: ""
+    apiKey: process.env.fb_apiKey,
+    authDomain: process.env.fb_authDomain,
+    projectId: process.env.fb_projectId,
+    storageBucket: process.env.fb_storageBucket,
+    messagingSenderId: process.env.fb_messagingSenderId,
+    appId: process.env.fb_appId
 };
