@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 app.get('/', (req, res) => {
-  res.status(200).write("here you are!");
+  res.status(200).send("here you are!");
 })
 
 
