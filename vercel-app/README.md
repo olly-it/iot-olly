@@ -43,5 +43,11 @@ npm install
 # run locally with
 node index.js
 
-# vercel console
-import the project, leave the build scripts etc as is, add the env variables (line inside the .env file), that's all
+# deploy
+Vercel is quite a good solution. really similar to Render, but maybe it doesn't have the cold-startup period of 20 seconds after 15min of non-use
+
+https://vercel.com/
+
+1. create a vercel account and link this git repo. As the github repo include more projects, as "base dir" configure the sub dir (e.g. vercel-app).
+1. copy .env variables on vercel's environment var console
+1. leave build command/all other commands by default
