@@ -1,16 +1,16 @@
-// index.js
 const express = require('express')
-const app = express()
-const PORT = 4000
+const app = express();
 
+const dotenv = require('dotenv');
+dotenv.config();
 
-app.get('/home', (req, res) => {
-  res.status(200).json('Welcome, your app is working well');
+app.get('/', (req, res) => {
+  res.status(200).write("here you are!");
 })
 
 
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log("Server running at PORT: "+process.env.PORT);
 });
 
 // Export the Express API
