@@ -56,3 +56,10 @@ https://render.com/
 1. copy .env variables on render's environment var console
 1. as build command: "npm install"
 1. as run command: "node server.js"
+
+# cold start & inactivity
+After some inactivity (10-15min?) the server goes in sleeping mode and the cold start is quite slow (30-50")
+
+normally responses take about 170millis to be processed
+
+Compared to Vercel, it's faster when hot, but very slow on cold start.

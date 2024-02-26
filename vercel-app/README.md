@@ -51,3 +51,10 @@ https://vercel.com/
 1. create a vercel account and link this git repo. As the github repo include more projects, as "base dir" configure the sub dir (e.g. vercel-app).
 1. copy .env variables on vercel's environment var console
 1. leave build command/all other commands by default
+
+# cold start & inactivity
+After some inactivity (5-6 minutes?) the server goes in sleeping mode, but the cold start is really fast (1.5")
+
+normally responses take about 300millis to be processed
+
+Compared to Render, it's slower when hot, but much faster on cold start.
