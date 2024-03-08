@@ -1,6 +1,6 @@
 #code on ESP32 board (made with ArduinoIDE)
 
-## my ESP-32
+## my ESP32
 my board is:  
 ESP32 WROOM-32 Development Board TYPE-C CH340C/ CP2102 WiFi+Bluetooth Ultra-Low Power Consumption Dual Core Wireless Module  
 
@@ -36,3 +36,14 @@ Probabily when you try to upload the sketch it goes to error:
 
 To solve it, just reduce the upload speed frequency like:
 Tools -> Upload Speed: invece che 921600 mettere 115200
+
+## my ESP32-c3 super mini
+ESP32-C3 Development Board ESP32 SuperMini Wifi Bluetooth
+
+It has built-in led as well (port 8)
+- Board: “ESP32C3 Dev Module”
+- Port: “/dev/cu.usbmodem14301 (WiFiduino32S3)”
+
+Beware: led on is LOW, off is HIGH (opposite to the standard ESP32)
+
+NOTE: for this board, usb-c/usb-c cable works

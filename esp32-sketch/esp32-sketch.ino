@@ -1,20 +1,25 @@
+// ESP32 has ON=high, OFF=low, OUTPUT=2
+// ESP32-C3 has ON=low, OFF=HIGH, OUTPUT=8
+#define LED_ON LOW
+#define LED_OFF HIGH
+#define LED_OUTPUT 8
+
 // ciao rebe
-const char data[] = "-.-. .. .- --- / .-. . -... .";
+char data[] = "-.-. .. .- --- / .-. . -... .";
 // message speed can be controller by "SLEEP_MULTIUPLIER"
 const float SLEEP_MULTIPLIER = 0.8;
 
-// init
 void setup() {
- pinMode(2, OUTPUT);
+  pinMode(LED_OUTPUT, OUTPUT);
 }
 
 void hl(int high, int low) {
   if (high>0) {
-    digitalWrite(2, HIGH);
+    digitalWrite(2, LED_ON);
     delay(high);
   }
   if (low>0) {
-    digitalWrite(2, LOW);
+    digitalWrite(2, LED_OFF);
     delay(low);
   }
 }
