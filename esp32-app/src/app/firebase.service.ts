@@ -6,12 +6,11 @@ import { initializeApp } from "firebase/app";
 import {
     getFirestore,
     query,
-    addDoc,
+    updateDoc,
     collection,
     getDocs,
+    getDoc,
     doc,
-    deleteDoc,
-    where,
   } from 'firebase/firestore';
 
 import { firebaseConfig } from "./firebase.config";
@@ -25,7 +24,6 @@ export class FirebaseService {
 
     async getMorse() : Promise<{id:string, data:any}|null> {
         console.log('getMorse function invoked');
-        //const q = query(collection(db, "postbox"), where("name", "==", name), where("birthDate", "==", birthDate));
         const q = query(collection(db, "morse"));
         let querySnapshot = await getDocs(q);
         try {
@@ -33,5 +31,16 @@ export class FirebaseService {
         } catch (e) {
           return null;
         }
+    }
+
+    updateMorse(id:string|undefined, value:any) {
+      console.log('updateMorse function invoked');
+      try {
+        const docRef = doc(db, "morse", id==undefined?"_":id);
+        updateDoc(docRef,{"value":value});
+        console.log("updated");
+      } catch (e) {
+        console.log(e);
       }
+  }
 }

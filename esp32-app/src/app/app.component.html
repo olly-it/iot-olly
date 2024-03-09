@@ -1,5 +1,11 @@
 
 <div class="content">
-    hi there!
+    <input #txt type="text" value="{{morseText}}"> 
+    <button type="button" (click)="setMorseFromText(txt.value)">ToMorse</button>
+    <br><br>
+    <input #mv type="text" value="{{morseValue}}"> 
+    <button type="button" (click)="save(mv.value)">Save</button>
+    <br><br>
+    {{saved}}
 </div>
 <router-outlet />
